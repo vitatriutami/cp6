@@ -1,7 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const router = express.Router();
-const { history } = require('../models');
+const express = require("express")
+const router = express.Router()
+const cors = require("cors")
+const { history } = require("../models")
+
+router.use(cors())
+router.use(express.json())
 
 // microservices
 router.use(cors());
@@ -9,12 +12,11 @@ router.use(express.json());
 
 // ---- CRUD ----
 // -- CREATE history --
-async function add (req, res) {
+router.post("/history", async  (req, res) => {
     try {
         await history.create({
-            email: req.body.email,
-            fullname: req.body.fullname,
-            age: req.body.age,
+            score: req.body.score,
+            level: req.body.level,
             createdAt: new Date(),
             updatedAt: new Date(),
         })
@@ -24,10 +26,10 @@ async function add (req, res) {
     }
 
     res.end()
-}
+})
 
 // -- READ history --
-async function list (req, res) {
+router.get("/historygame", async (req, res) => {
     let response = []
     try {
         response = await history.findAll({
@@ -43,10 +45,10 @@ async function list (req, res) {
     }
 
     res.json(response)
-}
+})
 
 // -- READ history BY ID --
-async function getById (req, res) {
+router.get("/historygame/:id", async (req, res) => {
     let response = {}
     try {
         response = await history.findOne({where: {id: req.params.id}})
@@ -57,14 +59,14 @@ async function getById (req, res) {
     }
 
     res.json(response)
-}
+})
 
-// -- UPDATE HISTORY BY ID --
-async function update (req, res) {
+// -- UPDATE history BY ID --
+router.put("/historygame/:id", async (req, res) => {
     try {
         await history.update({
             score: req.body.score,
-            levelname: req.body.level,
+            level: req.body.level,
         }, {
             where: {id: req.params.id}
         })
@@ -73,10 +75,10 @@ async function update (req, res) {
     }
 
     res.end()
-}
+})
 
-// -- DELETE HISTORY BY ID --
-async function remove (req, res) {
+// -- DELETE history BY ID --
+router.delete("/articles/:id", async (req, res) => {
     try {
         await history.destroy({
             where: {id: req.params.id}
@@ -86,15 +88,6 @@ async function remove (req, res) {
     }
 
     res.end()
-}
+})
 
-
-module.exports = {
-    add,
-    getById,
-    list,
-    update,
-    remove
-}
-
-
+module.exports = router

@@ -1,7 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const router = express.Router();
-const { user } = require('../models');
+const express = require("express")
+const router = express.Router()
+const cors = require("cors")
+const { user } = require("../models")
+
+router.use(cors())
+router.use(express.json())
 
 // microservices
 router.use(cors());
@@ -9,7 +12,7 @@ router.use(express.json());
 
 // ---- CRUD ----
 // -- CREATE USER --
-async function add (req, res) {
+router.post("/usergame", async  (req, res) => {
     try {
         await user.create({
             password: req.body.password,
@@ -25,10 +28,10 @@ async function add (req, res) {
     }
 
     res.end()
-}
+})
 
 // -- READ USER --
-async function list (req, res) {
+router.get("/usergame", async (req, res) => {
     let response = []
     try {
         response = await user.findAll({
@@ -44,10 +47,10 @@ async function list (req, res) {
     }
 
     res.json(response)
-}
+})
 
 // -- READ USER BY ID --
-async function getById (req, res) {
+router.get("/usergame/:id", async (req, res) => {
     let response = {}
     try {
         response = await user.findOne({where: {id: req.params.id}})
@@ -58,10 +61,10 @@ async function getById (req, res) {
     }
 
     res.json(response)
-}
+})
 
 // -- UPDATE USER BY ID --
-async function update (req, res) {
+router.put("/usergame/:id", async (req, res) => {
     try {
         await user.update({
             password: req.body.password,
@@ -76,10 +79,10 @@ async function update (req, res) {
     }
 
     res.end()
-}
+})
 
 // -- DELETE USER BY ID --
-async function remove (req, res) {
+router.delete("/articles/:id", async (req, res) => {
     try {
         await user.destroy({
             where: {id: req.params.id}
@@ -89,15 +92,6 @@ async function remove (req, res) {
     }
 
     res.end()
-}
+})
 
-
-module.exports = {
-    add,
-    getById,
-    list,
-    update,
-    remove
-}
-
-
+module.exports = router

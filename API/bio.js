@@ -1,7 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const router = express.Router();
-const { bio } = require('../models');
+const express = require("express")
+const router = express.Router()
+const cors = require("cors")
+const { bio } = require("../models")
+
+router.use(cors())
+router.use(express.json())
 
 // microservices
 router.use(cors());
@@ -9,7 +12,7 @@ router.use(express.json());
 
 // ---- CRUD ----
 // -- CREATE BIO --
-async function add (req, res) {
+router.post("/bio", async  (req, res) => {
     try {
         await bio.create({
             email: req.body.email,
@@ -24,10 +27,10 @@ async function add (req, res) {
     }
 
     res.end()
-}
+})
 
-// -- READ BIO --
-async function list (req, res) {
+// -- READ bio --
+router.get("/biogame", async (req, res) => {
     let response = []
     try {
         response = await bio.findAll({
@@ -43,10 +46,10 @@ async function list (req, res) {
     }
 
     res.json(response)
-}
+})
 
-// -- READ BIO BY ID --
-async function getById (req, res) {
+// -- READ bio BY ID --
+router.get("/biogame/:id", async (req, res) => {
     let response = {}
     try {
         response = await bio.findOne({where: {id: req.params.id}})
@@ -57,10 +60,10 @@ async function getById (req, res) {
     }
 
     res.json(response)
-}
+})
 
-// -- UPDATE BIO BY ID --
-async function update (req, res) {
+// -- UPDATE bio BY ID --
+router.put("/biogame/:id", async (req, res) => {
     try {
         await bio.update({
             email: req.body.email,
@@ -74,10 +77,10 @@ async function update (req, res) {
     }
 
     res.end()
-}
+})
 
-// -- DELETE BIO BY ID --
-async function remove (req, res) {
+// -- DELETE bio BY ID --
+router.delete("/articles/:id", async (req, res) => {
     try {
         await bio.destroy({
             where: {id: req.params.id}
@@ -87,15 +90,6 @@ async function remove (req, res) {
     }
 
     res.end()
-}
+})
 
-
-module.exports = {
-    add,
-    getById,
-    list,
-    update,
-    remove
-}
-
-
+module.exports = router

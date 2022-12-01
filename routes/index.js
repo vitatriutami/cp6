@@ -1,25 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-const usergameController = require('../controllers/usergame');
-const bioController = require('../controllers/bio');
-const historyController = require('../controllers/history');
-
-/*
-const sessionController = require('../controllers/session');
-*/
-
 /* GET homepage game. */
 router.get("/", (req, res) => {
   res.render("index")
 })
 
-// ---- GET usergame API listing ----
-router.get('/api/usergame', usergameController.list);
-router.get('/api/usergame/:id', usergameController.getById);
-router.post('/api/usergame', usergameController.add);
-router.put('/api/usergame/:id', usergameController.update);
-router.delete('/api/usergame', usergameController.remove);
 // List view
 router.get("/usergame", (req, res) => {
   res.render("usergame/list")

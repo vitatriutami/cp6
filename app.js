@@ -9,6 +9,9 @@ const usersRouter = require('./routes/users');
 
 const app = express();
 
+const { usergame, bio, history } = require("./API/usergame")
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -22,6 +25,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ROUTER
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/api/v1", usergame);
+app.use("/api/v1", bio);
+app.use("/api/v1", history);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
