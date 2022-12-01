@@ -48,7 +48,7 @@ router.get("/bio/:id", (req, res) => {
 })
 
 
-// ---- GET HISTORY API LISTING ----
+// ---- GET HISTORY LISTING ----
 // List view
 router.get("/history", (req, res) => {
   res.render("history/list")

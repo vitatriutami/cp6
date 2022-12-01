@@ -27,10 +27,12 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 // api
-app.use("/api", usergame);
-app.use("/api", bio);
-app.use("/api", history);
-
+app.use('/api/usergame', usergame);
+app.use('/api/usergame/:id', usergame);
+app.use('/api/bio', bio);
+app.use('/api/bio/:id', bio);
+app.use('/api/history', history);
+app.use('/api/history/:id', history);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
