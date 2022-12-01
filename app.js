@@ -6,7 +6,9 @@ const logger = require('morgan');
 const app = express();
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
+const usergameRouter = require('./routes/usergame');
+const bioRouter = require('./routes/bio');
+const historyRouter = require('./routes/history');
 const apiRouter = require("./routes/api")
 
 // view engine setup
@@ -21,7 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // ROUTER
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/usergame', usergameRouter);
+app.use('/bio', bioRouter);
+app.use('/history', historyRouter);
 app.use('/api', apiRouter);
 
 

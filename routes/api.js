@@ -162,7 +162,7 @@ router.put("/bio/:id", async (req, res) => {
 })
 
 // -- DELETE bio BY ID --
-router.delete("/articles/:id", async (req, res) => {
+router.delete("/bio/:id", async (req, res) => {
     try {
         await bio.destroy({
             where: {id: req.params.id}
