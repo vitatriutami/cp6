@@ -1,25 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
-const usergameController = require('../controllers/usergame');
-const bioController = require('../controllers/bio');
-const historyController = require('../controllers/history');
-
-/*
-const sessionController = require('../controllers/session');
-*/
-
 /* GET homepage game. */
 router.get("/", (req, res) => {
   res.render("index")
 })
 
-// ---- GET usergame API listing ----
-router.get('/api/usergame', usergameController.list);
-router.get('/api/usergame/:id', usergameController.getById);
-router.post('/api/usergame', usergameController.add);
-router.put('/api/usergame/:id', usergameController.update);
-router.delete('/api/usergame', usergameController.remove);
+// ---- GET usergame listing ----
 // List view
 router.get("/usergame", (req, res) => {
   res.render("usergame/list")
@@ -40,13 +27,7 @@ router.get("/usergame/:id", (req, res) => {
 })
 
 
-// ---- GET BIO API LISTING ----
-// ---- GET usergame API listing ----
-router.get('/api/bio', bioController.list);
-router.get('/api/bio/:id', bioController.getById);
-router.post('/api/bio', bioController.add);
-router.put('/api/bio/:id', bioController.update);
-router.delete('/api/bio', bioController.remove);
+// ---- GET BIO LISTING ----
 // List view
 router.get("/bio", (req, res) => {
   res.render("bio/list")
@@ -68,12 +49,6 @@ router.get("/bio/:id", (req, res) => {
 
 
 // ---- GET HISTORY API LISTING ----
-// ---- GET usergame API listing ----
-router.get('/api/history', historyController.list);
-router.get('/api/history/:id', historyController.getById);
-router.post('/api/history', historyController.add);
-router.put('/api/history/:id', historyController.update);
-router.delete('/api/history', historyController.remove);
 // List view
 router.get("/history", (req, res) => {
   res.render("history/list")
@@ -94,8 +69,8 @@ router.get("/history/:id", (req, res) => {
 })
 
 /*
-// ---- GET SESSION API LISTING ----
-// ---- GET usergame API listing ----
+// ---- GET SESSION LISTING ----
+// ---- GET session API listing ----
 router.get('/api/session', sessionController.list);
 router.get('/api/session/:id', sessionController.getById);
 router.post('/api/session', sessionController.add);
