@@ -6,6 +6,8 @@ router.get("/", (req, res) => {
   res.render("index")
 })
 
+
+// ---- GET USERGAME LISTING ----
 // List view
 router.get("/usergame", (req, res) => {
   res.render("usergame/list")
@@ -27,12 +29,6 @@ router.get("/usergame/:id", (req, res) => {
 
 
 // ---- GET BIO API LISTING ----
-// ---- GET usergame API listing ----
-router.get('/api/bio', bioController.list);
-router.get('/api/bio/:id', bioController.getById);
-router.post('/api/bio', bioController.add);
-router.put('/api/bio/:id', bioController.update);
-router.delete('/api/bio', bioController.remove);
 // List view
 router.get("/bio", (req, res) => {
   res.render("bio/list")
@@ -53,13 +49,7 @@ router.get("/bio/:id", (req, res) => {
 })
 
 
-// ---- GET HISTORY API LISTING ----
-// ---- GET usergame API listing ----
-router.get('/api/history', historyController.list);
-router.get('/api/history/:id', historyController.getById);
-router.post('/api/history', historyController.add);
-router.put('/api/history/:id', historyController.update);
-router.delete('/api/history', historyController.remove);
+// ---- GET HISTORY LISTING ----
 // List view
 router.get("/history", (req, res) => {
   res.render("history/list")
