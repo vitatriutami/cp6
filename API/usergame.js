@@ -82,7 +82,7 @@ router.put("/usergame/:id", async (req, res) => {
 })
 
 // -- DELETE USER BY ID --
-router.delete("/articles/:id", async (req, res) => {
+router.delete("/usergame/:id", async (req, res) => {
     try {
         await user.destroy({
             where: {id: req.params.id}

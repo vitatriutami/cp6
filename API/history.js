@@ -29,7 +29,7 @@ router.post("/history", async  (req, res) => {
 })
 
 // -- READ history --
-router.get("/historygame", async (req, res) => {
+router.get("/history", async (req, res) => {
     let response = []
     try {
         response = await history.findAll({
@@ -48,7 +48,7 @@ router.get("/historygame", async (req, res) => {
 })
 
 // -- READ history BY ID --
-router.get("/historygame/:id", async (req, res) => {
+router.get("/history/:id", async (req, res) => {
     let response = {}
     try {
         response = await history.findOne({where: {id: req.params.id}})
@@ -62,7 +62,7 @@ router.get("/historygame/:id", async (req, res) => {
 })
 
 // -- UPDATE history BY ID --
-router.put("/historygame/:id", async (req, res) => {
+router.put("/history/:id", async (req, res) => {
     try {
         await history.update({
             score: req.body.score,
