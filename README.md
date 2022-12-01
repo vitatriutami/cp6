@@ -8,7 +8,8 @@
 
 
 // --- MODEL ---
- // Association between user & bio: one to one -> 
+
+Association between user & bio: one to one -> 
  foreignKey: 'bioId',
 
 Association between user & history: one to many ->
