@@ -3,8 +3,6 @@ const router = express.Router()
 const cors = require("cors")
 const { bio } = require("../models")
 
-router.use(cors())
-router.use(express.json())
 
 // microservices
 router.use(cors());
@@ -30,7 +28,7 @@ router.post("/bio", async  (req, res) => {
 })
 
 // -- READ bio --
-router.get("/biogame", async (req, res) => {
+router.get("/bio", async (req, res) => {
     let response = []
     try {
         response = await bio.findAll({
@@ -49,7 +47,7 @@ router.get("/biogame", async (req, res) => {
 })
 
 // -- READ bio BY ID --
-router.get("/biogame/:id", async (req, res) => {
+router.get("/bio/:id", async (req, res) => {
     let response = {}
     try {
         response = await bio.findOne({where: {id: req.params.id}})
@@ -63,7 +61,7 @@ router.get("/biogame/:id", async (req, res) => {
 })
 
 // -- UPDATE bio BY ID --
-router.put("/biogame/:id", async (req, res) => {
+router.put("/bio/:id", async (req, res) => {
     try {
         await bio.update({
             email: req.body.email,

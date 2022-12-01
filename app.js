@@ -7,10 +7,7 @@ const app = express();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const usergame = require("./API/usergame")
-const bio = require("./API/bio")
-const history = require("./API/history")
-
+const apiRouter = require("./routes/api")
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,14 +22,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ROUTER
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
-// api
-app.use('/api/usergame', usergame);
-app.use('/api/usergame/:id', usergame);
-app.use('/api/bio', bio);
-app.use('/api/bio/:id', bio);
-app.use('/api/history', history);
-app.use('/api/history/:id', history);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

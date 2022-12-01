@@ -3,8 +3,6 @@ const router = express.Router()
 const cors = require("cors")
 const { history } = require("../models")
 
-router.use(cors())
-router.use(express.json())
 
 // microservices
 router.use(cors());
