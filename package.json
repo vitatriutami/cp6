@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "sequelize-cli": "sequelize-cli", 
+    "sequelize-cli": "sequelize-cli",
     "sequelize": "sequelize",
     "migrate": "sequelize-cli db:migrate",
     "seed": "sequelize-cli db:seed:all"
