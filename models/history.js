@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
       // Association between user & history: one to many
       history.belongsTo(models.user, {
         foreignKey: 'historyId',
-        as: 'history'
+        as: 'histories'
       })
     }
   }
