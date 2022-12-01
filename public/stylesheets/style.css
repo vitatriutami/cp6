@@ -1,0 +1,140 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Page 1 */
+.banner{
+  width: 100%;
+  height: 100vh;
+  background-image: url("http://localhost:3000/images/main-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+nav{
+  height: 80px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+nav p{
+  color: white;
+  font-size: 20px;
+  letter-spacing: 3px;
+  padding-left: 100px;
+  align-items: center;
+  font-weight: bold;
+  margin-top: 12px;
+  font-family:'Open Sans';
+}
+
+nav ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-left: 89px;
+  margin-top: 12px;
+}
+.nav-two{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-left: 390px;
+}
+
+nav ul li{
+  list-style-type: none;
+  padding: 15px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 10.8px;
+  letter-spacing: 1.5px;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+}
+.nav-two a{
+  list-style-type: none;
+  padding: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  font-size: 10.8px;
+  letter-spacing: 1.5px;
+}
+nav ul .active {
+  background-color: #FBB341;
+  color: white;
+  padding: 12px;
+}
+.nav-two .active {
+  background-color: #FBB341;
+  color: white;
+  padding: 12px;
+}
+nav ul li a:hover{
+  color: #FBB341 !important;
+  transition: all .3 ease-in-out;
+}
+.nav-two a:hover{
+  color: #FBB341;
+  transition: all .3 ease-in-out;
+}
+nav ul .active:hover {
+  color: white !important;
+}
+.nav-two .active:hover {
+  color: white !important;
+}
+
+.header-scroll-toggle {
+  text-decoration: none;
+  font-size: 11px;
+  margin-top: 10px;
+  margin-bottom: -8px;
+  letter-spacing: .9px;
+}
+
+.header-info {
+  width: 100%;
+  height: 86%;
+  color: white;
+  text-align: center;
+}
+
+
+.header-info-col h1{
+  font-family: 'Open Sans';
+  width: 100%;
+  font-size: 4rem;
+  padding-top: 10%;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 5rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 3rem;
+}
+.header-info-col a{
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: .5px;
+}
+
+.header-info-col h3{
+  letter-spacing: 0.1rem;
+  line-height: 2rem;
+  flex: 1;
+  margin-bottom: 3.56rem;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: lighter;
+  font-family: 'Open Sans';
+}

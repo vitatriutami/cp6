@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url("http://localhost:3000/images/the-games-bg.jpg");
+    background-size: cover;
+}
+body div{
+    color: white;
+}
+body div form{
+    width: 400px;
+}
+body div form button, body div form a {
+    margin-top: 20px;
+}
+body div form div{
+    margin-bottom: 15px;
+}
+body div h1{
+    color: #ff9d00;
+}
