@@ -244,7 +244,7 @@ router.put("/history/:id", async (req, res) => {
 })
 
 // -- DELETE history BY ID --
-router.delete("/articles/:id", async (req, res) => {
+router.delete("/history/:id", async (req, res) => {
     try {
         await history.destroy({
             where: {id: req.params.id}
