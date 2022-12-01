@@ -6,14 +6,6 @@
 
 // =====================
 
-Association between user & bio: one to one
- foreignKey: 'bioId',
-
-
-Association between user & history: one to many
- foreignKey: 'historyid'
-
-
 
 // --- MODEL ---
 Association between user & bio: one to one
