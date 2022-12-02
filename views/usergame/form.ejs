@@ -29,6 +29,10 @@
                 <label>E-mail</label>
                 <input type="text" id="bioId" class="form-control">
             </div>
+            <div class="form-group">
+                <label>Score</label>
+                <input type="text" id="historyId" class="form-control">
+            </div>
             <button type="submit" id="save" class="btn btn-primary">Save</button>
             <a href="/usergame" class="btn btn-secondary">Back</a>
         </form>
@@ -40,6 +44,7 @@
         let usernameInput = document.getElementById("username")
         let passwordInput = document.getElementById("password")
         let bioInput = document.getElementById("bioId")
+        let historyInput = document.getElementById("historyId")
 
         let form = document.getElementById("form")
         form.onsubmit = function(e) {
@@ -47,6 +52,7 @@
             let username = usernameInput.value
             let password= passwordInput.value
             let bioId = bioInput.value
+            let historyId = historyInput.value
             
             fetch(`/api/v1/usergame/${id}`, {
                 method: method,
@@ -57,6 +63,7 @@
                     username: username,
                     password: password,
                     bioId: bioId,
+                    historyId: historyId
                 })
             }).then(() => {
                 window.location.href = "/usergame"
