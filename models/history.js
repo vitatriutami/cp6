@@ -11,10 +11,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      // Association between user & history: one to many
+      
+      // -- Association between user & history: one to many --
       history.belongsTo(models.user, {
-        foreignKey: 'historyId',
-        as: 'histories'
       })
     }
   }

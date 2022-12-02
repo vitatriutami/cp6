@@ -1,7 +1,7 @@
 const express = require("express")
 const router = express.Router()
 const cors = require("cors")
-const { user } = require("../models")
+const { user, bio, history } = require("../models")
 
 // microservices
 router.use(cors());
@@ -34,8 +34,12 @@ router.get("/usergame", async (req, res) => {
         response = await user.findAll({
             include: [
                 {
-                    model: user,
-                    as: "user"
+                    model: bio,
+                    as: "bio"
+                },
+                {
+                    model: history,
+                    as: "history"
                 }
             ]
         })
