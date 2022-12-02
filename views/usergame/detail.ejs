@@ -27,7 +27,7 @@
     </div>
 
     <script>
-        fetch(`/api/bio/<%= id %>`)
+        fetch(`/api/v1/bio/<%= id %>`)
         .then(raw => raw.json())
         .then(data => {
             console.log(data)
@@ -42,7 +42,7 @@
     </script>
 
     <script>
-        fetch(`/api/history/<%= id %>`)
+        fetch(`/api/v1/history/<%= id %>`)
         .then(raw => raw.json())
         .then(data => {
             console.log(data)
