@@ -36,7 +36,7 @@
         .then(data => {
             let body = document.getElementById("body")
             for (let i in data) {
-                let article = data[i]
+                let user = data[i]
                 body.innerHTML += `<tr>
                     <td>${user.id}</td>    
                     <td>${user.username}</td>    
