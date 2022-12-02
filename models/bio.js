@@ -14,6 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       
     // -- Association between user & bio: one to one -- 
       bio.hasOne(models.user, {
+        foreignKey: 'bioId',
+        as: 'bio'
     })
   }
 }
