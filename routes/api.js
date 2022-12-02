@@ -1,7 +1,10 @@
 const express = require("express")
 const router = express.Router()
 const cors = require("cors")
-const { user, bio, history } = require("../models")
+const user = require("../models/user")
+const bio = require("../models/bio")
+const history = require("../models/history")
+
 
 // microservices
 router.use(cors());
